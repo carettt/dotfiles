@@ -1,0 +1,42 @@
+# Base16 oomox-space - alacritty color config
+# oomox-space
+colors:
+  # Default colors
+  primary:
+    background: "0x3f356d"
+    foreground: "0xfefefa"
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: "0x3f356d"
+    cursor: "0xfefefa"
+
+  # Normal colors
+  normal:
+    black: "0x3f356d"
+    red: "0xff597f"
+    green: "0xb2657e"
+    yellow: "0xe66490"
+    blue: "0x8a3a92"
+    magenta: "0xae358f"
+    cyan: "0xa44f94"
+    white: "0xfefefa"
+
+  # Bright colors
+  bright:
+    black: "0x9e99b3"
+    red: "0xe66490"
+    green: "0x6a4c85"
+    yellow: "0x6a4c85"
+    blue: "0x2b2159"
+    magenta: "0xfefefa"
+    cyan: "0xde4a73"
+    white: "0xfefefa"
+
+draw_bold_text_with_bright_colors: false
+custom_cursor_colors: true
+
+window:
+  padding:
+    x: 10
+    y: 10
