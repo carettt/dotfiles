@@ -71,6 +71,8 @@
     users = {
       "caret" = import ./home.nix;
     };
+
+    backupFileExtension = "backup";
   };
 
   # Allow unfree packages
