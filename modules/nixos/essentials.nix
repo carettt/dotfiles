@@ -3,8 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     vim
-    git
     tree
     nh
+    wget
   ];
 }
