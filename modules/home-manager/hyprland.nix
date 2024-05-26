@@ -1,8 +1,8 @@
-{ inputs, pkgs, lib, ... }:
+{ inputs, pkgs, lib, config, ... }:
 
 {
   options = {
-    hyprland.enable = lib.mkEnable "Enable hyprland wm";
+    hyprland.enable = lib.mkEnableOption "Enable hyprland wm";
   };
 
   config = lib.mkIf config.hyprland.enable {

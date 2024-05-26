@@ -3,7 +3,6 @@
 {
   imports = [
     ../modules/home-manager/git.nix
-    ../modules/home-manager/hyprland.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -85,5 +84,6 @@
     email = "dandradepac@outlook.com";
   };
 
-  hyprland.enable = true;
+  # hyprland.enable = true;
+  wayland.windowManager.hyprland.enable = true;
 }
