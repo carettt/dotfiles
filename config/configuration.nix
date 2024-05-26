@@ -55,7 +55,7 @@
   # Wayland/Hyprland
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+    #package = inputs.hyprland.packages."${pkgs.system}".hyprland;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
