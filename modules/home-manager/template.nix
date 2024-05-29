@@ -2,7 +2,7 @@
 
 let cfg = config.module; in {
   options = {
-    module.enable = lib.mkEnableOption "enables module";
+    module.enable = lib.mkEnableOption "module";
 
     module.option = lib.mkOption {
       default = "";

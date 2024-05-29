@@ -1,8 +1,8 @@
 { pkgs, lib, config, ... }:
 
-{
+let cfg = config.module; in {
   options = {
-    module.enable = lib.mkEnableOption "enables module";
+    module.enable = lib.mkEnableOption "module";
 
     module.option = lib.mkOption {
       default = "";
@@ -11,7 +11,7 @@
     };
   };
 
-  config = lib.mkIf config.module.enable {
+  config = lib.mkIf cfg.enable {
     # Module options here ...
   };
 }

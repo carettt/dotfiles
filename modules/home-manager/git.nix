@@ -17,8 +17,8 @@ let cfg = config.git; in {
   config = lib.mkIf cfg.enable {
     programs.git = {
       enable = true;
-      userName = config.git.name;
-      userEmail = config.git.email;
+      userName = cfg.name;
+      userEmail = cfg.email;
     };
   };
 }
