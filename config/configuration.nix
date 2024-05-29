@@ -52,12 +52,6 @@
   #   variant = "";
   # };
 
-  # Wayland/Hyprland
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.caret = {
     isNormalUser = true;
@@ -87,8 +81,6 @@
   environment.sessionVariables = {
     EDITOR = "vim";
     FLAKE = "/home/caret/dotfiles";
-    # Hint electron apps to use wayland
-    NIXOS_OZONE_WL = "1";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
