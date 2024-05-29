@@ -83,6 +83,4 @@
     name = "caret_";
     email = "dandradepac@outlook.com";
   };
-
-  wayland.windowManager.hyprland.enable = true;
 }
