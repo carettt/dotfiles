@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
-    ../modules/home-manager/git.nix
+    inputs.self.outputs.homeManagerModules.default
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -72,7 +72,7 @@
   #  /etc/profiles/per-user/caret/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "vim";
   };
 
   # Let Home Manager install and manage itself.

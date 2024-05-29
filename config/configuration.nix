@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../modules/nixos/essentials.nix
+      ../modules/nixos
       inputs.home-manager.nixosModules.default
     ];
 
@@ -66,13 +66,12 @@
     packages = with pkgs; [];
   };
 
+  # Home Manager
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "caret" = import ./home.nix;
-    };
-
     backupFileExtension = "backup";
+    extraSpecialArgs = { inherit inputs; };
+
+    users."caret" = import ./home.nix;
   };
 
   # Allow unfree packages

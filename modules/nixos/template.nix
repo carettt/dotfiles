@@ -5,7 +5,7 @@
     module.enable = lib.mkEnableOption "enables module";
 
     module.option = lib.mkOption {
-      default = ""
+      default = "";
       type = lib.types.string;
       description = "module option";
     };
