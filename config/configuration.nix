@@ -85,6 +85,7 @@
   ];
 
   environment.sessionVariables = {
+    EDITOR = "vim";
     FLAKE = "/home/caret/dotfiles";
     # Hint electron apps to use wayland
     NIXOS_OZONE_WL = "1";

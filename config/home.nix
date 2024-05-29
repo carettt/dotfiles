@@ -84,6 +84,5 @@
     email = "dandradepac@outlook.com";
   };
 
-  # hyprland.enable = true;
   wayland.windowManager.hyprland.enable = true;
 }
