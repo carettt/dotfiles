@@ -13,7 +13,12 @@ let cfg = config.nvidia; in {
 
   config = lib.mkIf cfg.enable {
     services.xserver.videoDrivers = [ "nvidia" ];
-    hardware.nvidia.modesetting.enable = true;
+    hardware.nvidia = {
+      modesetting.enable = true;
+      open = false;
+      nvidiaSettings = true;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+    };
 
     hardware.opengl = lib.mkIf cfg.opengl {
       enable = true;
