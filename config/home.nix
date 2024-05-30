@@ -78,9 +78,12 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # Enable modules
   git = {
     enable = true;
     name = "caret_";
     email = "dandradepac@outlook.com";
   };
+
+  hyprland.enable = true;
 }
