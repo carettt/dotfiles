@@ -86,4 +86,6 @@
   };
 
   hyprland.enable = true;
+
+  terminal.enable = true;
 }
