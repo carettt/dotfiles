@@ -26,9 +26,9 @@ let cfg = config.terminal; in {
 
         font = {
           size = 12.0;
-          normal.family = "Hack";
-          bold.family = "Hack";
-          italic.family = "Hack";
+          normal.family = "Hack Nerd Font";
+          bold.family = "Hack Nerd Font";
+          italic.family = "Hack Nerd Font";
         };
 
         cursor.style = { shape = "Beam"; blinking = "On"; };
