@@ -3,11 +3,6 @@
 let cfg = config.terminal; in {
   options = {
     terminal.enable = lib.mkEnableOption "terminal packages";
-
-    terminal.alacrittyTheme = lib.mkOption {
-      type = lib.types.path;
-      description = "Path to alacritty theme named theme-[NAME].nix (overwrites default)";
-    };
   };
 
   config = lib.mkIf cfg.enable {
