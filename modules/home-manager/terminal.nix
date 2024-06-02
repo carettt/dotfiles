@@ -1,6 +1,9 @@
 { inputs, pkgs, lib, config, ... }:
 
-let cfg = config.terminal; in {
+let
+  cfg = config.terminal;
+  utils = import ../utils.nix { inherit lib; };
+in {
   options = {
     terminal.enable = lib.mkEnableOption "terminal packages";
 
@@ -19,7 +22,7 @@ let cfg = config.terminal; in {
     programs.alacritty = {
       enable = true;
 
-      settings = lib.attrsets.recursiveUpdate {
+      settings = utils.recursiveMerge [{
         window = {
           padding = { x = 5; y = 5; };
           decorations = "None";
@@ -33,7 +36,7 @@ let cfg = config.terminal; in {
         };
 
         cursor.style = { shape = "Beam"; blinking = "On"; };
-      } cfg.alacrittySettings;
+      } cfg.alacrittySettings];
     };
   };
 }
