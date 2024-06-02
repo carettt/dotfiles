@@ -15,6 +15,8 @@ let cfg = config.git; in {
   };
 
   config = lib.mkIf cfg.enable {
+    home.packages = [ pkgs.gh ];    
+
     programs.git = {
       enable = true;
       userName = cfg.name;
