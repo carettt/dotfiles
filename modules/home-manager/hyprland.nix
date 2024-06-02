@@ -1,6 +1,9 @@
 { inputs, pkgs, lib, config, ... }:
 
-let cfg = config.hyprland; in {
+let
+  cfg = config.hyprland;
+  utils = import ../utils.nix { inherit lib; };
+in {
   options = {
     hyprland.enable = lib.mkEnableOption "hyprland";
 
@@ -16,7 +19,7 @@ let cfg = config.hyprland; in {
       enable = true;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
-      settings = lib.recursiveUpdate {
+      settings = utils.recursiveMerge [{
         # Monitors
         monitor= [
           ",preferred,auto,auto"
@@ -165,7 +168,7 @@ let cfg = config.hyprland; in {
         windowrulev2 = [
           "suppressevent maximize, class:.*"
         ];
-      } cfg.override;
+      } cfg.override];
     };
   };
 }
