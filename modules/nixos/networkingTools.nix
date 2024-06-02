@@ -12,6 +12,6 @@ let cfg = config.networkingTools; in {
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = lib.mkIf cfg.nmap [ pkgs.nmap ];
+    environment.systemPackages = lib.lists.optionals cfg.nmap [ pkgs.nmap ];
   };
 }

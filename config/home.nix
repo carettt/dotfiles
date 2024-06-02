@@ -85,11 +85,12 @@
     email = "dandradepac@outlook.com";
   };
 
-  hyprland.enable = true;
   browser.enable = true;
 
   terminal = {
     enable = true;
     vim = true;
   };
+
+  rosepine.enable = true;
 }
