@@ -3,6 +3,12 @@
 let cfg = config.terminal; in {
   options = {
     terminal.enable = lib.mkEnableOption "terminal packages";
+
+    terminal.alacrittySettings = lib.mkOption {
+      type = lib.types.attrs;
+      default = {};
+      description = "Override default alacritty settings";
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -13,7 +19,7 @@ let cfg = config.terminal; in {
     programs.alacritty = {
       enable = true;
 
-      settings = {
+      settings = lib.attrsets.recursiveUpdate {
         window = {
           padding = { x = 5; y = 5; };
           decorations = "None";
@@ -27,7 +33,7 @@ let cfg = config.terminal; in {
         };
 
         cursor.style = { shape = "Beam"; blinking = "On"; };
-      };
+      } cfg.alacrittySettings;
     };
   };
 }
