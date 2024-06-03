@@ -92,5 +92,5 @@
     vim = true;
   };
 
-  rosepine.enable = true;
+  desktop.enable = true;
 }
