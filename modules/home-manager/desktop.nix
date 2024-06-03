@@ -10,6 +10,14 @@ let cfg = config.desktop; in {
       default = true;
     };
 
+    desktop.swaybg = {
+      enable = lib.mkEnableOption "SwayBG";
+      wallpaper = lib.mkOption {
+        description = "Path to wallpaper image";
+        type = lib.types.path;
+      };
+    };
+
     desktop.waybar = lib.mkOption {
       description = "Whether to enable Waybar";
       type = lib.types.bool;
@@ -18,6 +26,8 @@ let cfg = config.desktop; in {
   };
 
   config = lib.mkIf cfg.enable {
+    home.packages = lib.lists.optionals cfg.swaybg.enable [ pkgs.swaybg ];
+    
     waybar.enable = true;
 
     hyprland = {
@@ -25,7 +35,8 @@ let cfg = config.desktop; in {
 
       override = {
         exec-once =  
-          lib.lists.optionals cfg.waybar [ "waybar" ];
+          lib.lists.optionals cfg.waybar [ "waybar" ] ++
+          lib.lists.optionals cfg.swaybg.enable [ "swaybg -i ${cfg.swaybg.wallpaper}" ];
       };
     };
   };

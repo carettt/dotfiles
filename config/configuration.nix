@@ -119,4 +119,9 @@
   networkingTools.enable = true;
 
   bluetooth.enable = true;
+
+  rosepine = {
+    enable = true;
+    wallpaper = ../wallpapers/rosepine-wp.png;
+  };
 }

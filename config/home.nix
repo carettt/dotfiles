@@ -90,7 +90,5 @@
   terminal = {
     enable = true;
     vim = true;
-  };
-
-  desktop.enable = true;
+  }; 
 }

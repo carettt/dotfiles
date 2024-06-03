@@ -10,6 +10,11 @@
     };
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, ... }@inputs: {
@@ -18,6 +23,7 @@
       modules = [
         ./config/configuration.nix
         inputs.home-manager.nixosModules.home-manager
+        inputs.stylix.nixosModules.stylix
       ];
     };
 

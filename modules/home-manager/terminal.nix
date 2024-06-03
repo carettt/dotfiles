@@ -31,10 +31,10 @@ in {
         };
 
         font = {
-          size = 12.0;
-          normal.family = "Hack Nerd Font";
-          bold.family = "Hack Nerd Font";
-          italic.family = "Hack Nerd Font";
+          size = lib.mkForce 12.0;
+          normal.family = lib.mkForce "Hack Nerd Font";
+          bold.family = lib.mkForce "Hack Nerd Font";
+          italic.family = lib.mkForce "Hack Nerd Font";
         };
 
         cursor.style = { shape = "Beam"; blinking = "On"; };
