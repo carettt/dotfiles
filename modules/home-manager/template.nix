@@ -1,13 +1,16 @@
 { inputs, pkgs, lib, config, ... }:
 
-let cfg = config.module; in {
+let
+  cfg = config.module;
+  utils = import ../utils.nix { inherit lib; };
+in {
   options = {
     module.enable = lib.mkEnableOption "module";
 
-    module.option = lib.mkOption {
-      default = "";
-      type = lib.types.string;
-      description = "module option";
+    module.override = lib.mkOption {
+      default = {};
+      type = lib.types.attrs;
+      description = "Override module settings";
     };
   };
 
