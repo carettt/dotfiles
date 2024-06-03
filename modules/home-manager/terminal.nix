@@ -12,6 +12,8 @@ in {
       default = {};
       description = "Override default alacritty settings";
     };
+
+    terminal.vim = lib.mkEnableOption "VIm editor";
   };
 
   config = lib.mkIf cfg.enable {
@@ -37,6 +39,18 @@ in {
 
         cursor.style = { shape = "Beam"; blinking = "On"; };
       } cfg.alacrittySettings];
+    };
+
+    programs.vim = {
+      enable = cfg.vim;
+
+      extraConfig = ''
+        set expandtab
+        set smarttab
+        set tabstop=2
+        set softtabstop=2
+        set shiftwidth=2
+      '';
     };
   };
 }

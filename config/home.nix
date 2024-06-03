@@ -88,5 +88,8 @@
   hyprland.enable = true;
   browser.enable = true;
 
-  terminal.enable = true;
+  terminal = {
+    enable = true;
+    vim = true;
+  };
 }

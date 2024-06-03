@@ -1,8 +1,7 @@
 { lib, config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    vim
+  environment.systemPackages = with pkgs; [ 
     tree
     nh
     wget
