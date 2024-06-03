@@ -1,6 +1,9 @@
 { pkgs, lib, config, ... }:
 
-let cfg = config.rosepine; in {
+let
+  cfg = config.rosepine;
+  hm = home-manager.users."caret";
+in {
   options = {
     rosepine.enable = lib.mkEnableOption "Rosé Pine Theme";
 
@@ -11,7 +14,7 @@ let cfg = config.rosepine; in {
   };
 
   config = lib.mkIf cfg.enable {
-    home-manager.users."caret".desktop = {
+    hm.desktop = {
       enable = true;
       swaybg = {
         enable = true;
@@ -42,6 +45,6 @@ let cfg = config.rosepine; in {
 
         serif = config.stylix.fonts.sansSerif;
       };
-    };
+    };  
   };
 }
