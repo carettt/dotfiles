@@ -26,15 +26,8 @@ in {
 
       settings = utils.recursiveMerge [{
         window = {
-          padding = { x = 5; y = 5; };
+          padding = { x = 10; y = 10; };
           decorations = "None";
-        };
-
-        font = {
-          size = lib.mkForce 12.0;
-          normal.family = lib.mkForce "Hack Nerd Font";
-          bold.family = lib.mkForce "Hack Nerd Font";
-          italic.family = lib.mkForce "Hack Nerd Font";
         };
 
         cursor.style = { shape = "Beam"; blinking = "On"; };
