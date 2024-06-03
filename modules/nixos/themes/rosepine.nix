@@ -1,8 +1,7 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, inputs, lib, config, ... }:
 
 let
   cfg = config.rosepine;
-  hm = home-manager.users."caret";
 in {
   options = {
     rosepine.enable = lib.mkEnableOption "Rosé Pine Theme";
@@ -14,14 +13,33 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    hm.desktop = {
-      enable = true;
-      swaybg = {
+    home-manager.users."caret" = {
+      desktop = {
         enable = true;
-        wallpaper = cfg.wallpaper;
+        swaybg = {
+          enable = true;
+          wallpaper = cfg.wallpaper;
+        };
       };
+
+      wayland.windowManager.hyprland.settings = {
+        windowrulev2 = [
+          "opacity 0.75 0.65,class:(Alacritty)"
+        ];
+
+        decoration = {
+          rounding = lib.mkForce 0;
+          blur = { 
+            size = lib.mkForce 12;
+            passes = lib.mkForce 2;
+            special = true;
+          };
+        };
+      };
+
+      programs.alacritty.settings.window.blur = lib.mkForce true;
     };
-    
+     
     stylix = {
       image = cfg.wallpaper;
 
