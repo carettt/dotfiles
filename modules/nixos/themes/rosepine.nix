@@ -72,6 +72,14 @@ in {
             #network {
               padding: 0 8px 1px;
             }
+
+            #network.disconnected {
+              color: #${config.stylix.base16Scheme.base08};
+            }
+
+            #network.disabled {
+              color: #${config.stylix.base16Scheme.base09};
+            }
           '';
         };
       };
