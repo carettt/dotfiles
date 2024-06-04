@@ -89,12 +89,14 @@ in {
       wayland.windowManager.hyprland.settings = {
         windowrulev2 = [
           "opacity 0.75 0.65,class:(Alacritty)"
+          "workspace 1,class:(Alacritty)"
+          "workspace 2,class:(firefox)"
         ];
 
         decoration = {
           rounding = lib.mkForce 0;
           blur = { 
-            size = lib.mkForce 12;
+            size = lib.mkForce 8;
             passes = lib.mkForce 2;
             special = true;
           };
