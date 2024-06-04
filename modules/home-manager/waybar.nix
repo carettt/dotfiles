@@ -22,9 +22,26 @@ in {
         mainBar = {
           layer = "top";
 
-          modules-left = [ "hyprland/window" "privacy" ];
+          modules-left = [ "hyprland/workspaces" "hyprland/window" ];
           modules-center = [ "clock" ];
           modules-right = [ "cpu" "custom/gpu" "memory" "network" ];
+
+          "hyprland/workspaces" = {
+            format = "{icon}";
+            format-icons = {
+              "1" = "";
+              "2" = "󰈹";
+              "3" = "󰭹";
+              "4" = "󰓇";
+            };
+            
+            persistent-workspaces = {
+              "1" = [];
+              "2" = [];
+              "3" = [];
+              "4" = [];
+            };
+          };
 
           network = {
             format = "󱦲{bandwidthUpBytes} / 󱦳{bandwidthDownBytes}";

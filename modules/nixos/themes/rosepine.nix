@@ -20,6 +20,60 @@ in {
           enable = true;
           wallpaper = cfg.wallpaper;
         };
+
+        waybar = {
+          enable = true;
+          style = ''
+            * {
+              border: none;
+              border-radius: 0;
+              min-height: 24px;
+              padding: 0;
+              margin: 0;
+            }
+
+            window#waybar, window > box {
+              background-color: transparent;
+              padding: 20px 20px 0;
+            }
+
+            .modules-left, .modules-right, .modules-center {
+              background-color: #${config.stylix.base16Scheme.base02};
+              border: 2px solid #${config.stylix.base16Scheme.base03};
+              padding: 3px 8px;
+            }
+
+            #workspaces button, #workspaces button.label {
+              min-width: 30px;
+              padding-right: 3px;
+            }
+
+            #workspaces button:hover {
+              background-color: #${config.stylix.base16Scheme.base00};
+            }
+
+            #workspaces button.active {
+              border: 2px solid #${config.stylix.base16Scheme.base0A};
+              color: #${config.stylix.base16Scheme.base0A};
+              padding-right: 3px;
+              padding-left: 0;
+              min-width: 30px;
+            }
+
+            #window {
+              color: #${config.stylix.base16Scheme.base0A};
+              padding-top: 3px;
+            }
+
+            #clock, #cpu, #custom-gpu, #memory {
+              padding: 3px 8px 0;
+            }
+
+            #network {
+              padding: 0 8px 1px;
+            }
+          '';
+        };
       };
 
       wayland.windowManager.hyprland.settings = {
@@ -43,7 +97,24 @@ in {
     stylix = {
       image = cfg.wallpaper;
 
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
+      base16Scheme = {
+        base00 = "232136";
+        base01 = "2a273f";
+        base02 = "393552";
+        base03 = "6e6a86";
+        base04 = "908caa";
+        base05 = "e0def4";
+        base06 = "e0def4";
+        base07 = "56526e";
+        base08 = "eb6f92";
+        base09 = "f6c177";
+        base0A = "ea9a97";
+        base0B = "3e8fb0";
+        base0C = "9ccfd8";
+        base0D = "c4a7e7";
+        base0E = "f6c177";
+        base0F = "56526e";
+      };
 
       cursor = {
         package = pkgs.rose-pine-cursor;
@@ -51,8 +122,13 @@ in {
       };
 
       fonts = {
+        emoji = {
+          package = pkgs.nerdfonts.override { fonts = ["Hack"]; };
+          name = "Hack Nerd Font Mono";
+        };
+
         monospace = {
-          package = pkgs.nerdfonts.override { fonts = ["JetBrainsMono"]; };
+          package = pkgs.nerdfonts.override { fonts = ["Hack"]; };
           name = "Hack Nerd Font Mono";
         };
 
@@ -63,6 +139,6 @@ in {
 
         serif = config.stylix.fonts.sansSerif;
       };
-    };  
+    };
   };
 }

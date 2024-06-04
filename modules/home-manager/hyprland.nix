@@ -113,7 +113,7 @@ in {
         };
 
         # Keybindings
-        "$mod" = "SUPER";
+        "$mod" = "ALT";
 
         bind = [
           # General
@@ -124,6 +124,8 @@ in {
           "$mod, SPACE, exec, $menu"
           "$mod, P, pseudo,"
           "$mod, G, togglesplit,"
+          "$mod, V, togglefloating"
+          "$mod, F, fullscreen"
 
           # Focus
           "$mod, H, movefocus, l"
