@@ -22,6 +22,7 @@ in {
         };
 
         fuzzel.enable = true;
+        powermenu.enable = true;
 
         waybar = {
           enable = true;

@@ -28,6 +28,8 @@ let cfg = config.desktop; in {
       };
 
       fuzzel.enable = lib.mkEnableOption "Fuzzel application launcher";
+
+      powermenu.enable = lib.mkEnableOption "nwg-bar power menu";
     };
   };
 
@@ -48,5 +50,6 @@ let cfg = config.desktop; in {
     };
 
     fuzzel.enable = cfg.fuzzel.enable;
+    powermenu.enable = cfg.powermenu.enable;
   };
 }

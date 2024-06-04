@@ -30,6 +30,7 @@ in {
         "$terminal" = "alacritty";
         "$fileManager" = "";
         "$menu" = "fuzzel --no-icons --terminal='alacritty -e'";
+        "$powermenu" = "nwg-bar";
 
         # Autostart
         exec-once = [
@@ -119,7 +120,7 @@ in {
           # General
           "$mod, Q, exec, $terminal"
           "$mod, C, killactive,"
-          "$mod, M, exit," # TODO: remove bind when powermenu setup
+          "$mod, M, exec, $powermenu"
           "$mod, E, exec, $fileManager"
           "$mod, SPACE, exec, $menu"
           "$mod, P, pseudo,"
