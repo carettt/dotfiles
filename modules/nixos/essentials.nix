@@ -6,5 +6,6 @@
     nh
     wget
     ripgrep
+    thefuck
   ];
 }
