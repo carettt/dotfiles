@@ -29,7 +29,7 @@ in {
         # Program Shortcuts
         "$terminal" = "alacritty";
         "$fileManager" = "";
-        "$menu" = "";
+        "$menu" = "fuzzel --no-icons --terminal='alacritty -e'";
 
         # Autostart
         exec-once = [
@@ -126,6 +126,8 @@ in {
           "$mod, G, togglesplit,"
           "$mod, V, togglefloating"
           "$mod, F, fullscreen"
+          "$mod, D, exec, $menu"
+          "$mod, R, exec, hyprctl reload"
 
           # Focus
           "$mod, H, movefocus, l"

@@ -26,6 +26,8 @@ let cfg = config.desktop; in {
           type = lib.types.str;
         };
       };
+
+      fuzzel.enable = lib.mkEnableOption "Fuzzel application launcher";
     };
   };
 
@@ -44,5 +46,7 @@ let cfg = config.desktop; in {
           lib.lists.optionals cfg.swaybg.enable [ "swaybg -i ${cfg.swaybg.wallpaper}" ];
       };
     };
+
+    fuzzel.enable = cfg.fuzzel.enable;
   };
 }

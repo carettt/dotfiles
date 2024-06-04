@@ -21,6 +21,8 @@ in {
           wallpaper = cfg.wallpaper;
         };
 
+        fuzzel.enable = true;
+
         waybar = {
           enable = true;
           style = ''
