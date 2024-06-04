@@ -117,4 +117,6 @@
   # Enabling modules
   nvidia.enable = true;
   networkingTools.enable = true;
+
+  bluetooth.enable = true;
 }
