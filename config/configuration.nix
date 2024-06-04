@@ -120,6 +120,7 @@
 
   bluetooth.enable = true;
 
+  login.enable = true;
   rosepine = {
     enable = true;
     wallpaper = ../wallpapers/rosepine-wp.png;
