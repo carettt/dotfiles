@@ -85,6 +85,22 @@ in {
             #network.disabled {
               color: #${config.stylix.base16Scheme.base09};
             }
+
+            #bluetooth.off {
+              color: #${config.stylix.base16Scheme.base03};
+            }
+
+            #bluetooth.disabled {
+              color: #${config.stylix.base16Scheme.base08};
+            }
+
+            #bluetooth.on {
+              color: #${config.stylix.base16Scheme.base0C};
+            }
+
+            #bluetooth.connected {
+              color: #${config.stylix.base16Scheme.base0B};
+            }
           '';
         };
       };

@@ -24,7 +24,7 @@ in {
 
           modules-left = [ "hyprland/workspaces" "hyprland/window" ];
           modules-center = [ "clock" ];
-          modules-right = [ "cpu" "custom/gpu" "memory" "network" ];
+          modules-right = [ "bluetooth" "cpu" "custom/gpu" "memory" "network" ];
 
           "hyprland/workspaces" = {
             format = "{icon}";
@@ -58,6 +58,9 @@ in {
             format = "CPU: {usage} %";
           };
 
+          bluetooth = {
+            format = "󰂯";
+          };
 
           memory = {
             format = "RAM: {percentage} %";
