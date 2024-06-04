@@ -46,17 +46,19 @@ in {
             }
 
             #workspaces button, #workspaces button.label {
+              color: #${config.stylix.base16Scheme.base03};
               min-width: 30px;
               padding-right: 3px;
             }
 
             #workspaces button:hover {
               background-color: #${config.stylix.base16Scheme.base00};
+              color: #${config.stylix.base16Scheme.base05};
             }
 
             #workspaces button.active {
-              border: 2px solid #${config.stylix.base16Scheme.base0A};
-              color: #${config.stylix.base16Scheme.base0A};
+              border: 2px solid #${config.stylix.base16Scheme.base0D};
+              color: #${config.stylix.base16Scheme.base0D};
               padding-right: 3px;
               padding-left: 0;
               min-width: 30px;
