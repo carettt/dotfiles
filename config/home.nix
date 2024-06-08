@@ -91,4 +91,6 @@
     enable = true;
     vim = true;
   }; 
+
+  music.enable = true;
 }
