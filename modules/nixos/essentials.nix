@@ -5,5 +5,6 @@
     tree
     nh
     wget
+    ripgrep
   ];
 }
