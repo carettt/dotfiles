@@ -71,20 +71,8 @@ in {
               padding-top: 3px;
             }
 
-            #clock, #cpu, #custom-gpu, #memory {
+            #clock {
               padding: 3px 8px 0;
-            }
-
-            #network {
-              padding: 0 8px 1px;
-            }
-
-            #network.disconnected {
-              color: #${config.stylix.base16Scheme.base08};
-            }
-
-            #network.disabled {
-              color: #${config.stylix.base16Scheme.base09};
             }
 
             #bluetooth.off {
@@ -101,6 +89,15 @@ in {
 
             #bluetooth.connected {
               color: #${config.stylix.base16Scheme.base0B};
+            }
+            
+            #mpris {
+              color: #${config.stylix.base16Scheme.base09};
+              margin-right: 6px;
+            }
+
+            #mpris.paused {
+              color: #${config.stylix.base16Scheme.base03};
             }
           '';
         };

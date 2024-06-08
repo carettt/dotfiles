@@ -8,6 +8,6 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ pkgs.ncspot ];
+    home.packages = [ pkgs.ncspot pkgs.playerctl ];
   };
 }

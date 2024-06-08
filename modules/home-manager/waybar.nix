@@ -24,7 +24,7 @@ in {
 
           modules-left = [ "hyprland/workspaces" "hyprland/window" ];
           modules-center = [ "clock" ];
-          modules-right = [ "bluetooth" "cpu" "custom/gpu" "memory" "network" ];
+          modules-right = lib.lists.optionals config.music.enable [ "mpris" ] ++ [ "bluetooth" ];
 
           "hyprland/workspaces" = {
             format = "{icon}";
@@ -43,27 +43,23 @@ in {
             };
           };
 
-          network = {
-            format = "󱦲{bandwidthUpBytes} / 󱦳{bandwidthDownBytes}";
-          };
-
-          "custom/gpu" = {
-            exec = "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader";
-            format = "GPU: {}";
-            return-type = "";
-            interval = 1;
-          };
-
-          cpu = {
-            format = "CPU: {usage} %";
-          };
-
           bluetooth = {
             format = "󰂯";
           };
 
-          memory = {
-            format = "RAM: {percentage} %";
+          mpris = {
+            format = "{player_icon} {dynamic}";
+            format-paused = "{status_icon} <i>{dynamic}</i>";
+
+            dynamic-order = [ "title" "artist" "album" ];
+
+            player-icons = {
+              default = "󰐊";
+              ncspot = "󰎇";
+            };
+            status-icons = {
+              paused = "󰏤";
+            };
           };
         };
       } cfg.override];
