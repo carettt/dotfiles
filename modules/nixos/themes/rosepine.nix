@@ -50,6 +50,7 @@ in {
               color: #${config.stylix.base16Scheme.base03};
               min-width: 30px;
               padding-right: 3px;
+              margin-right: 5px;
             }
 
             #workspaces button:hover {
