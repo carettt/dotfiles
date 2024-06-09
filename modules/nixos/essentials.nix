@@ -6,20 +6,20 @@
     nh
     wget
     ripgrep
-    thefuck
+    #thefuck
   ];
 
-  home-manager.users."caret" = {
-    xdg.configFile = {
-      "thefuck/settings.py".text = ''
-        exclude_rules = [ "fix_file" ]
-      '';
-    };
-    
-    programs.thefuck = {
-      enable = true;
-      enableNushellIntegration = true;
-      package = pkgs.thefuck;
-    };
-  };
+  #home-manager.users."caret" = {
+  #  xdg.configFile = {
+  #    "thefuck/settings.py".text = ''
+  #      exclude_rules = [ "fix_file" ]
+  #    '';
+  #  };
+  #  
+  #  programs.thefuck = {
+  #    enable = true;
+  #    enableNushellIntegration = true;
+  #    package = pkgs.thefuck;
+  #  };
+  #};
 }
