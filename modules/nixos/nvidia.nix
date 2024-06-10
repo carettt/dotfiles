@@ -18,6 +18,10 @@ let cfg = config.nvidia; in {
       open = false;
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+      powerManagement = {
+        enable = true;
+      };
     };
 
     hardware.opengl = lib.mkIf cfg.opengl {
