@@ -59,15 +59,15 @@ in {
             }
 
             #workspaces button.active {
-              border: 2px solid #${config.stylix.base16Scheme.base0D};
-              color: #${config.stylix.base16Scheme.base0D};
+              border: 2px solid #${config.stylix.base16Scheme.base0A};
+              color: #${config.stylix.base16Scheme.base0A};
               padding-right: 3px;
               padding-left: 0;
               min-width: 30px;
             }
 
             #window {
-              color: #${config.stylix.base16Scheme.base0A};
+              color: #${config.stylix.base16Scheme.base0D};
               padding-top: 3px;
             }
 
