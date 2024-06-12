@@ -45,6 +45,7 @@ in {
 
           bluetooth = {
             format = "󰂯";
+            on-click = "overskride";
           };
 
           mpris = {

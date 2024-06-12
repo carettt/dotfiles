@@ -30,7 +30,7 @@ in {
           enable = true;
           style = ''
             .control-center {
-              margin: 20px;
+              margin: 30px;
               background-color: rgba(57, 53, 82, 0.55);
               border-radius: 0;
               border: 2px solid #908CAA;
