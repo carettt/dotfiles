@@ -38,6 +38,8 @@ let cfg = config.desktop; in {
       fuzzel.enable = lib.mkEnableOption "Fuzzel application launcher";
 
       powermenu.enable = lib.mkEnableOption "nwg-bar power menu";
+
+      utilities.enable = lib.mkEnableOption "miscellaneous utilities";
     };
   };
 
@@ -76,6 +78,12 @@ let cfg = config.desktop; in {
           "notifications"
         ];
       };
+    };
+
+    xdg.portal = lib.mkIf cfg.utilities.enable {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
+      config.common.default = "hyprland";
     };
   };
 }

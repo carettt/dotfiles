@@ -23,6 +23,9 @@ in {
 
         fuzzel.enable = true;
         powermenu.enable = true;
+
+        utilities.enable = true;
+
         notifications = {
           enable = true;
           style = ''
