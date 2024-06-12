@@ -8,6 +8,10 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ pkgs.ncspot pkgs.playerctl ];
+    home.packages = let
+      ncspot = pkgs.ncspot.override {
+        withCover = true;
+      };
+    in [ ncspot pkgs.playerctl ];
   };
 }

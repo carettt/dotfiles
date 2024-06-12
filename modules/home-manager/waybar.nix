@@ -24,7 +24,7 @@ in {
 
           modules-left = [ "hyprland/workspaces" "hyprland/window" ];
           modules-center = [ "clock" ];
-          modules-right = lib.lists.optionals config.music.enable [ "mpris" ] ++ [ "bluetooth" ];
+          modules-right = lib.lists.optionals config.music.enable [ "mpris" ] ++ [ "bluetooth" "custom/notifications" ];
 
           "hyprland/workspaces" = {
             format = "{icon}";
@@ -60,6 +60,27 @@ in {
             status-icons = {
               paused = "󰏤";
             };
+          };
+
+          "custom/notifications" = {
+            tooltip = false;
+            format = "{icon}";
+            format-icons = {
+              notification = "󱅫";
+              none = "󰂚";
+              dnd-notification = "󰂛";
+              dnd-none = "󰂛";
+              inhibited-notification = "󱅫";
+              inhibited-none = "󰂚";
+              dnd-inhibited-notification = "󰂛";
+              dnd-inhibited-none = "󰂛";
+            };
+            return-type = "json";
+            exec-if = "which swaync-client";
+            exec = "swaync-client -swb";
+            on-click = "swaync-client -t -sw";
+            on-click-right = "swaync-client -d -sw";
+            escape = true;
           };
         };
       } cfg.override];

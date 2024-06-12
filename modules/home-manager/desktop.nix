@@ -27,6 +27,14 @@ let cfg = config.desktop; in {
         };
       };
 
+      notifications = {
+        enable = lib.mkEnableOption "Sway notification center";
+        style = lib.mkOption {
+          description = "SwayNC style";
+          type = lib.types.str;
+        };
+      };
+
       fuzzel.enable = lib.mkEnableOption "Fuzzel application launcher";
 
       powermenu.enable = lib.mkEnableOption "nwg-bar power menu";
@@ -35,8 +43,8 @@ let cfg = config.desktop; in {
 
   config = lib.mkIf cfg.enable {
     home.packages = lib.lists.optionals cfg.swaybg.enable [ pkgs.swaybg ];
-    
-    waybar.enable = true;
+
+    waybar.enable = cfg.waybar.enable;
     programs.waybar.style = lib.mkForce cfg.waybar.style;
 
     hyprland = {
@@ -45,11 +53,29 @@ let cfg = config.desktop; in {
       override = {
         exec-once =  
           lib.lists.optionals cfg.waybar.enable [ "waybar" ] ++
-          lib.lists.optionals cfg.swaybg.enable [ "swaybg -i ${cfg.swaybg.wallpaper}" ];
+          lib.lists.optionals cfg.swaybg.enable [ "swaybg -i ${cfg.swaybg.wallpaper}" ] ++
+          lib.lists.optionals cfg.notifications.enable [ "swaync" ];
       };
     };
 
     fuzzel.enable = cfg.fuzzel.enable;
     powermenu.enable = cfg.powermenu.enable;
+
+    services.swaync = {
+      enable = cfg.notifications.enable;
+      package = pkgs.swaynotificationcenter;
+      style = cfg.notifications.style;
+      settings = {
+        fit-to-screen = true;
+        widgets = [
+          "inhibitors"
+          "title"
+          "dnd"
+          "mpris"
+          "volume"
+          "notifications"
+        ];
+      };
+    };
   };
 }

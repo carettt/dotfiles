@@ -23,6 +23,36 @@ in {
 
         fuzzel.enable = true;
         powermenu.enable = true;
+        notifications = {
+          enable = true;
+          style = ''
+            .control-center {
+              margin: 20px;
+              background-color: rgba(57, 53, 82, 0.55);
+              border-radius: 0;
+              border: 2px solid #908CAA;
+            }
+
+            .notification {
+              padding: 8px;
+              margin: 20px 15px 0 0;
+              background-color: rgba(57, 53, 82, 0.55);
+              color: #E0DEF4;
+              border-radius: 0;
+              border: 2px solid #908CAA;
+            }
+
+            .close-button {
+              margin: 35px 30px;
+            }
+
+            .notification-default-action:hover {
+              background-color: rgba(57, 53, 82, 0.55);
+              box-shadow: none;
+              border-radius: 0;
+            }
+          '';
+        };
 
         waybar = {
           enable = true;
@@ -99,15 +129,29 @@ in {
             #mpris.paused {
               color: #${config.stylix.base16Scheme.base03};
             }
+
+            #custom-notifications {
+              color: #${config.stylix.base16Scheme.base05};
+              padding: 0 4px;
+            }
           '';
         };
       };
 
       wayland.windowManager.hyprland.settings = {
         windowrulev2 = [
-          "opacity 0.75 0.65,class:(Alacritty)"
-          "workspace 1,class:(Alacritty)"
-          "workspace 2,class:(firefox)"
+          "opacity 0.75 0.65,class:^(Alacritty)$"
+          "workspace 1,class:^(Alacritty)$"
+          "workspace 2,class:^(firefox)$"
+        ];
+
+        layerrule = [
+          "blur,^(swaync-control-center)$"
+          "blur,^(swaync-notification-window)$"
+          "ignorezero,^(swaync-control-center)$"
+          "ignorezero,^(swaync-notification-window)$"
+          "ignorealpha 0.5,^(swaync-control-center)$"
+          "ignorealpha 0.5,^(swaync-notification-window)$"
         ];
 
         decoration = {
