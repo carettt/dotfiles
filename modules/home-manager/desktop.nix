@@ -38,11 +38,14 @@ let cfg = config.desktop; in {
       fuzzel.enable = lib.mkEnableOption "Fuzzel application launcher";
 
       powermenu.enable = lib.mkEnableOption "nwg-bar power menu";
+
+      utilities.enable = lib.mkEnableOption "miscellaneous utilities";
     };
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = lib.lists.optionals cfg.swaybg.enable [ pkgs.swaybg ];
+    home.packages = lib.lists.optionals cfg.swaybg.enable [ pkgs.swaybg ] ++
+                    lib.lists.optionals cfg.utilities.enable [ pkgs.lxqt.lxqt-policykit ];
 
     waybar.enable = cfg.waybar.enable;
     programs.waybar.style = lib.mkForce cfg.waybar.style;
@@ -54,7 +57,8 @@ let cfg = config.desktop; in {
         exec-once =  
           lib.lists.optionals cfg.waybar.enable [ "waybar" ] ++
           lib.lists.optionals cfg.swaybg.enable [ "swaybg -i ${cfg.swaybg.wallpaper}" ] ++
-          lib.lists.optionals cfg.notifications.enable [ "swaync" ];
+          lib.lists.optionals cfg.notifications.enable [ "swaync" ] ++
+          lib.lists.optionals cfg.utilities.enable [ "lxqt-policykit-agent" ];
       };
     };
 
@@ -76,6 +80,12 @@ let cfg = config.desktop; in {
           "notifications"
         ];
       };
+    };
+
+    xdg.portal = lib.mkIf cfg.utilities.enable {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
+      config.common.default = "hyprland";
     };
   };
 }

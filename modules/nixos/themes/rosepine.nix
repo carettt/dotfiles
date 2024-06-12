@@ -23,6 +23,9 @@ in {
 
         fuzzel.enable = true;
         powermenu.enable = true;
+
+        utilities.enable = true;
+
         notifications = {
           enable = true;
           style = ''
@@ -151,6 +154,8 @@ in {
           "opacity 0.75 0.65,class:^(Alacritty)$"
           "workspace 1,class:^(Alacritty)$"
           "workspace 2,class:^(firefox)$"
+          "float,title:^(Authentication Required)$"
+          "float,title:^(overskride)$"
         ];
 
         layerrule = [

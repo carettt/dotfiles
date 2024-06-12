@@ -7,6 +7,8 @@ let cfg = config.shell; in {
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [ pkgs.nushell ];
+    environment.shells = [ pkgs.nushell ];
+
     users.defaultUserShell = pkgs.nushell;
     users.users."caret".useDefaultShell = true;
 
