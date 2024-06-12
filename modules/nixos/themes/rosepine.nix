@@ -76,6 +76,14 @@ in {
               padding: 3px 8px;
             }
 
+            .modules-left {
+              margin-right: 20px;
+            }
+
+            .modules-right {
+              margin-left: 20px;
+            }
+
             #workspaces button, #workspaces button.label {
               color: #${config.stylix.base16Scheme.base03};
               min-width: 30px;
