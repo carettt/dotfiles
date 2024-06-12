@@ -9,6 +9,14 @@
     #thefuck
   ];
 
+  security.polkit.enable = true;
+
+  qt.enable = true;
+
+  environment.sessionVariables = {
+    QT_QPA_PLATFORM = "wayland";
+  };
+
   #home-manager.users."caret" = {
   #  xdg.configFile = {
   #    "thefuck/settings.py".text = ''
