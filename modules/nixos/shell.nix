@@ -53,6 +53,12 @@ let cfg = config.shell; in {
 
               direnv export json | from json | default {} | load-env
           })
+
+          def mkenv [dir = "."] {
+            mkdir $dir
+            $dir | path join flake.nix | cp ${../home-manager/dev-env/template.nix} $in
+            echo "use flake" | save ($dir | path join .envrc)
+          }
         '';
 
         shellAliases = {
