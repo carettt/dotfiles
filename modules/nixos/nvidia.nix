@@ -29,5 +29,12 @@ let cfg = config.nvidia; in {
       driSupport = true;
       driSupport32Bit = true;
     };
+
+    console = {
+      earlySetup = true;
+      font = "${pkgs.terminus_font}/share/consolefonts/ter-i16n.psf.gz";
+      packages = [ pkgs.terminus_font ];
+      keyMap = "us";
+    };
   };
 }
