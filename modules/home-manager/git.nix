@@ -5,11 +5,11 @@ let cfg = config.git; in {
     git.enable = lib.mkEnableOption "enables git";
 
     git.name = lib.mkOption {
-      type = lib.types.string;
+      type = lib.types.str;
       description = "Name associated with all git actions";
     };
     git.email = lib.mkOption {
-      type = lib.types.string;
+      type = lib.types.str;
       description = "Emal associated with all git actions";
     };
   };

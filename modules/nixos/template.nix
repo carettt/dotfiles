@@ -6,7 +6,7 @@ let cfg = config.module; in {
 
     module.option = lib.mkOption {
       default = "";
-      type = lib.types.string;
+      type = lib.types.str;
       description = "module option";
     };
   };
