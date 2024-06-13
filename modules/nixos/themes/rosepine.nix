@@ -150,6 +150,8 @@ in {
       };
 
       wayland.windowManager.hyprland.settings = {
+        general."col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base0D})";
+
         windowrulev2 = [
           "opacity 0.75 0.65,class:^(Alacritty)$"
           "workspace 1,class:^(Alacritty)$"
