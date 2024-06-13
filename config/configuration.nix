@@ -85,6 +85,7 @@
   environment.sessionVariables = {
     EDITOR = "vim";
     FLAKE = "/home/caret/dotfiles";
+    DIRENV_LOG_FORMAT = "";
   };
 
   # Some programs need SUID wrappers, can be configured further or are

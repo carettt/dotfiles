@@ -12,7 +12,9 @@ let cfg = config.shell; in {
     users.defaultUserShell = pkgs.nushell;
     users.users."caret".useDefaultShell = true;
 
-    home-manager.users."caret".programs = {
+    home-manager.users."caret".programs = let
+      direnv = config.home-manager.users."caret".direnv.enable;
+    in {
       nushell = {
         enable = true;
         configFile.source = ./config.nu;
@@ -43,7 +45,15 @@ let cfg = config.shell; in {
             split row (char esep) |
             prepend /home/myuser/.apps |
             append /usr/bin/env)
-       '';
+        '' + lib.strings.optionalString direnv ''
+          $env.config.hooks.env_change.PWD = ({ ||
+              if (which direnv | is-empty) {
+                  return
+              }
+
+              direnv export json | from json | default {} | load-env
+          })
+        '';
 
         shellAliases = {
           t = "tree --filesfirst";

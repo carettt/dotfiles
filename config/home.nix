@@ -94,5 +94,7 @@
     vim = true;
   }; 
 
+  direnv.enable = true;
+
   music.enable = true;
 }
