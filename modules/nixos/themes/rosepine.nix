@@ -159,6 +159,7 @@ in {
           "workspace 1,class:^(Alacritty)$"
           "workspace 2,class:^(firefox)$"
           "workspace 3,class:^(so.libdb.dissent)$"
+          "workspace 4,title:^(overskride)$"
           "float,title:^(Authentication Required)$"
           "float,title:^(overskride)$"
           "float,class:^(com.github.hluk.copyq)$"
