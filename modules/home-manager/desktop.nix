@@ -45,7 +45,7 @@ let cfg = config.desktop; in {
 
   config = lib.mkIf cfg.enable {
     home.packages = lib.lists.optionals cfg.swaybg.enable [ pkgs.swaybg ] ++
-                    lib.lists.optionals cfg.utilities.enable [ pkgs.lxqt.lxqt-policykit ];
+                    lib.lists.optionals cfg.utilities.enable [ pkgs.lxqt.lxqt-policykit pkgs.copyq pkgs.wl-clipboard pkgs.grim pkgs.slurp ];
 
     waybar.enable = cfg.waybar.enable;
     programs.waybar.style = lib.mkForce cfg.waybar.style;
@@ -58,7 +58,7 @@ let cfg = config.desktop; in {
           lib.lists.optionals cfg.waybar.enable [ "waybar" ] ++
           lib.lists.optionals cfg.swaybg.enable [ "swaybg -i ${cfg.swaybg.wallpaper}" ] ++
           lib.lists.optionals cfg.notifications.enable [ "swaync" ] ++
-          lib.lists.optionals cfg.utilities.enable [ "lxqt-policykit-agent" ];
+          lib.lists.optionals cfg.utilities.enable [ "lxqt-policykit-agent" "copyq --start-server" ];
       };
     };
 

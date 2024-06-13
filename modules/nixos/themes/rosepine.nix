@@ -156,6 +156,7 @@ in {
           "workspace 2,class:^(firefox)$"
           "float,title:^(Authentication Required)$"
           "float,title:^(overskride)$"
+          "float,class:^(com.github.hluk.copyq)$"
         ];
 
         layerrule = [

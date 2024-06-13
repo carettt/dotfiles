@@ -129,6 +129,11 @@ in {
           "$mod, F, fullscreen"
           "$mod, D, exec, $menu"
           "$mod, R, exec, hyprctl reload"
+          "$mod, Z, exec, copyq toggle"
+
+          # Screenshots
+          "$mod, R, exec, grim -g \"$(slurp)\" - | wl-copy"
+          "$mod SHIFT, R, exec, grim -o \"$(slurp -o -f '%o')\" - | wl-copy"
 
           # Focus
           "$mod, H, movefocus, l"
