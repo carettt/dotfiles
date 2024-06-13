@@ -182,6 +182,8 @@ in {
     };
      
     stylix = {
+      enable = true;
+
       image = cfg.wallpaper;
 
       base16Scheme = {
