@@ -24,6 +24,8 @@ in {
         fuzzel.enable = true;
         powermenu.enable = true;
 
+        discord.enable = true;
+
         utilities.enable = true;
 
         notifications = {
@@ -156,6 +158,7 @@ in {
           "opacity 0.75 0.65,class:^(Alacritty)$"
           "workspace 1,class:^(Alacritty)$"
           "workspace 2,class:^(firefox)$"
+          "workspace 3,class:^(so.libdb.dissent)$"
           "float,title:^(Authentication Required)$"
           "float,title:^(overskride)$"
           "float,class:^(com.github.hluk.copyq)$"
