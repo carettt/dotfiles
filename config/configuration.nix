@@ -83,7 +83,6 @@
   ];
 
   environment.sessionVariables = {
-    EDITOR = "vim";
     FLAKE = "/home/caret/dotfiles";
     DIRENV_LOG_FORMAT = "";
   };
