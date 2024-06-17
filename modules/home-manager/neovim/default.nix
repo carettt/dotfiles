@@ -8,6 +8,8 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    home.packages = [ pkgs.gcc ];
+
     programs.neovim = {
       enable = true;
       package = pkgs.neovim-unwrapped;
