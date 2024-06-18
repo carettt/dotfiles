@@ -22,9 +22,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lspconfig = require('lspconfig')
 
 local default_setup = function(server)
-  require('lspconfig')[server].setup({
+  lspconfig[server].setup({
     capabilities = lsp_capabilities,
   })
 end
@@ -39,7 +40,7 @@ for i = 1, #servers do
 end
 
 -- LSPs with custom settings
-require('lspconfig').lua_ls.setup({
+lspconfig.lua_ls.setup({
   on_init = function(client)
     local path = client.workspace_folders[1].name
     if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
@@ -61,6 +62,25 @@ require('lspconfig').lua_ls.setup({
   settings = {
     Lua = {}
   }
+})
+
+lspconfig.nixd.setup({
+   cmd = { "nixd" },
+   settings = {
+      nixd = {
+         formatting = {
+            command = { "nixpkgs-fmt" },
+         },
+         options = {
+            nixos = {
+               expr = '(builtins.getFlake "/home/caret/dotfiles/").nixosConfigurations.patch.options',
+            },
+            home_manager = {
+               expr = '(builtins.getFlake "/home/caret/dotfiles/").homeConfigurations."caret@patch".options',
+            },
+         },
+      },
+   },
 })
 
 -- autocomplete

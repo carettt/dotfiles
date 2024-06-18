@@ -8,7 +8,14 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ pkgs.gcc ];
+    home.packages = [
+      pkgs.gcc
+      
+      # LSPs
+      pkgs.nixd
+      pkgs.lua-language-server
+      pkgs.rust-analyzer
+    ];
 
     programs.neovim = {
       enable = true;

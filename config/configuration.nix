@@ -61,7 +61,6 @@
     isNormalUser = true;
     description = "caret";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
   };
 
   # Home Manager
