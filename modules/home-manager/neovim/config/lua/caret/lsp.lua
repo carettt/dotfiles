@@ -1,5 +1,3 @@
--- note: diagnostics are not exclusive to lsp servers
--- so these can be global keybindings
 vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
 vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
 vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>') 
@@ -9,9 +7,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(event)
     local opts = {buffer = event.buf}
 
-    -- these will be buffer-local keybindings
-    -- because they only work if you have an active language server
-
+    -- LSP buffer-local keybinds
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
     vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
     vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
@@ -38,12 +34,11 @@ local servers = {
   "rust_analyzer"
 }
 
--- require('lspconfig').rust_analyzer.setup({ capabilities = lsp_capabilities })
-
 for i = 1, #servers do
   default_setup(servers[i])
 end
 
+-- autocomplete
 local cmp = require('cmp')
 
 cmp.setup({
