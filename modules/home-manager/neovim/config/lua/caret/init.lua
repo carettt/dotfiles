@@ -1,5 +1,4 @@
-vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+require("caret.remap")
 
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -51,4 +50,6 @@ require('nvim-treesitter.configs').setup({
   },
 })
 
-require('caret.lsp')
+-- imports
+require("caret.lsp")
+require("caret.set")
