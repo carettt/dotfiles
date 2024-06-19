@@ -83,6 +83,7 @@
 
   environment.sessionVariables = {
     FLAKE = "/home/caret/dotfiles";
+    EDITOR = "nvim"; # Change if not using neovim
     DIRENV_LOG_FORMAT = "";
   };
 
