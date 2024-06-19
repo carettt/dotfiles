@@ -61,7 +61,6 @@
     isNormalUser = true;
     description = "caret";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
   };
 
   # Home Manager
@@ -83,8 +82,8 @@
   ];
 
   environment.sessionVariables = {
-    EDITOR = "vim";
     FLAKE = "/home/caret/dotfiles";
+    EDITOR = "nvim"; # Change if not using neovim
     DIRENV_LOG_FORMAT = "";
   };
 

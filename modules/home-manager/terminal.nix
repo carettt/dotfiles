@@ -4,6 +4,10 @@ let
   cfg = config.terminal;
   utils = import ../utils.nix { inherit lib; };
 in {
+  imports = [
+    ./neovim
+  ];
+
   options = {
     terminal.enable = lib.mkEnableOption "terminal packages";
 
@@ -13,7 +17,7 @@ in {
       description = "Override default alacritty settings";
     };
 
-    terminal.vim = lib.mkEnableOption "VIm editor";
+    terminal.neovim.enable = lib.mkEnableOption "Neovim editor";
   };
 
   config = lib.mkIf cfg.enable {
@@ -34,16 +38,6 @@ in {
       } cfg.alacrittySettings];
     };
 
-    programs.vim = {
-      enable = cfg.vim;
-
-      extraConfig = ''
-        set expandtab
-        set smarttab
-        set tabstop=2
-        set softtabstop=2
-        set shiftwidth=2
-      '';
-    };
+    neovim.enable = cfg.neovim.enable;
   };
 }
