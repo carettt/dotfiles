@@ -33,6 +33,7 @@ end
 -- LSPs
 local servers = {
   'rust_analyzer',
+  'bashls',
 }
 
 for i = 1, #servers do
@@ -81,6 +82,18 @@ lspconfig.nixd.setup({
          },
       },
    },
+})
+
+-- make bash LSP work with zsh
+vim.filetype.add({
+  extension = {
+    zsh = "sh",
+    sh = "sh", -- force sh-files with zsh-shebang to still get sh as filetype 
+  },
+  filename = {
+    [".zshrc"] = "sh",
+    [".zshenv"] = "sh",
+  }
 })
 
 -- autocomplete

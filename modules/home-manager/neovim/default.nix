@@ -15,6 +15,7 @@ in {
       pkgs.nixd
       pkgs.lua-language-server
       pkgs.rust-analyzer
+      pkgs.bash-language-server
     ];
 
     programs.neovim = {
