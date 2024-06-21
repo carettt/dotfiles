@@ -6,6 +6,7 @@
     nh
     wget
     ripgrep
+    fzf
     porsmo
     #thefuck
   ];
