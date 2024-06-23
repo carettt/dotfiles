@@ -56,7 +56,7 @@ let cfg = config.nushell; in {
 
           def mkenv [dir = "."] {
             mkdir $dir
-            $dir | path join flake.nix | cp ${../../home-manager/dev-env/template.nix} $in
+            $dir | path join flake.nix | cp ${../../../home-manager/dev-env/template.nix} $in
             echo "use flake" | save ($dir | path join .envrc)
           }
         '';
