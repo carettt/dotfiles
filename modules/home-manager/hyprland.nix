@@ -123,7 +123,6 @@ in {
           "$mod, G, togglesplit,"
           "$mod, V, togglefloating"
           "$mod, F, fullscreen"
-          "$mod, D, exec, $menu"
           "$mod, R, exec, hyprctl reload"
           "$mod, W, exec, copyq toggle"
 
