@@ -26,6 +26,7 @@ nh os test [--update]
 dotfiles
 ├── flake.lock
 ├── flake.nix
+├── README.md
 ├── config
 │   ├── configuration.nix
 │   ├── hardware-configuration.nix
@@ -43,22 +44,49 @@ dotfiles
 │   │   ├── powermenu.nix
 │   │   ├── template.nix
 │   │   ├── terminal.nix
-│   │   └── waybar.nix
+│   │   ├── waybar.nix
+│   │   ├── dev-env
+│   │   │   ├── direnv.nix
+│   │   │   └── template.nix
+│   │   ├── neovim
+│   │   │   ├── default.nix
+│   │   │   └── config
+│   │   │       ├── init.lua
+│   │   │       └── lua
+│   │   │           ├── caret
+│   │   │           │   ├── init.lua
+│   │   │           │   ├── lsp.lua
+│   │   │           │   ├── remap.lua
+│   │   │           │   └── set.lua
+│   │   │           └── plugins
+│   │   │               ├── harpoon.lua
+│   │   │               ├── lsp.lua
+│   │   │               ├── rose-pine.lua
+│   │   │               ├── telescope.lua
+│   │   │               └── treesitter.lua
+│   │   └── prompt
+│   │       ├── conf.yaml
+│   │       └── prompt.nix
 │   └── nixos
 │       ├── audio.nix
 │       ├── bluetooth.nix
-│       ├── config.nu
 │       ├── default.nix
 │       ├── essentials.nix
 │       ├── login.nix
 │       ├── networkingTools.nix
 │       ├── nvidia.nix
-│       ├── shell.nix
 │       ├── template.nix
+│       ├── shell
+│       │   ├── nushell
+│       │   │   ├── config.nu
+│       │   │   └── nushell.nix
+│       │   └── zsh
+│       │       ├── config.zsh
+│       │       └── zsh.nix
 │       └── themes
 │           └── rosepine.nix
 └── wallpapers
     └── rosepine-wp.png
 
-7 directories, 29 files
+17 directories, 47 files
 ```
