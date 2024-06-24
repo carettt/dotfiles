@@ -86,11 +86,7 @@
 
   browser.enable = true;
 
-  terminal = {
-    enable = true;
-    neovim.enable = true;
-  }; 
-
+  terminal.enable = true;
   direnv.enable = true;
 
   music.enable = true;

@@ -34,11 +34,12 @@ let cfg = config.zsh; in {
       enableCompletion = false;
     };
 
-    home-manager.users."caret".home.file.".zshrc".source = ./config.zsh;
-    home-manager.users."caret".home.file.".zsh_plugins.txt" = {
-      # credit for the nice reduction function:
-      # https://discourse.nixos.org/t/nix-list-print-each-element-of-a-list-aka-string-to-file-aka-debugging/10863/2
-      text = builtins.foldl' (x: y: x + y + "\n") "" plugins; 
+    home-manager.users."caret" = {
+      prompt.enable = true;
+
+      home.file.".zshrc".source = ./config.zsh;
+      home.file.".zsh_plugins.txt".text =
+        builtins.foldl' (x: y: x + y + "\n") "" plugins;
     };
   });
 }

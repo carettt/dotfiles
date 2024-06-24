@@ -71,11 +71,6 @@ let cfg = config.nushell; in {
         enable = true;
         enableNushellIntegration = true;
       };
-
-      starship = {
-        enable = true;
-        # TODO
-      };
     };
   };
 }

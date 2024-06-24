@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version: 2
+final_space: true
+console_title_template: "{{ .Shell }} in {{ .Folder }}"
+blocks:
+- type: prompt
+  alignment: left
+
+  segments:
+  - type: path
+    style: plain
+    background: transparent
+    foreground: blue
+    template: '{{ .Path }} '
+
+    properties:
+      style: agnoster
+      gitdir_format: '%s'
+
+  - type: text
+    style: plain
+    background: transparent
+    foreground_templates:
+      - '{{if gt .Code 0}}red{{end}}'
+      - '{{if eq .Code 0}}cyan{{end}}'
+    template: '<b>~></b>'
+
+- type: rprompt
+  alignment: right
+  overflow: hidden
+
+  segments:
+  - type: git
+    style: plain
+    background: transparent
+    foreground: magenta
+    # ugly as shit :/
+    template: '<red>{{if gt .Behind 0}}{{end}}{{if gt .Ahead 0}}{{end}} {{if or .Working.Changed .Staging.Changed (gt .StashCount 0)}}<b>[{{if gt .StashCount 0}}${{end}}{{if .Working.Untracked}}?{{end}}{{if or .Working.Added .Working.Deleted .Working.Modified}}!{{end}}{{if .Working.Unmerged}}%{{end}}{{if or .Staging.Added .Staging.Deleted .Staging.Modified}}+{{end}}]</b>{{end}}</> on {{.HEAD}}'
+
+    properties:
+      fetch_status: true
+      branch_icon: ''
+      commit_icon: "@"
+
+transient_prompt:
+  background: transparent
+  foreground_templates:
+    - '{{if gt .Code 0}}red{{end}}'
+    - '{{if eq .Code 0}}cyan{{end}}'
+  template: '<b>></b> '
+
+secondary_prompt:
+  background: transparent
+  foreground: white
+  template: '>> '

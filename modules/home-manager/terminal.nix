@@ -17,7 +17,11 @@ in {
       description = "Override default alacritty settings";
     };
 
-    terminal.neovim.enable = lib.mkEnableOption "Neovim editor";
+    terminal.neovim.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Whether to enable neovim editor";
+    };
   };
 
   config = lib.mkIf cfg.enable {
