@@ -1,6 +1,6 @@
 set dotenv-load
 
-version := "1.2.0-rc1"
+version := "1.2.0"
 commit-msg := `git log -1 --pretty=format:%B`
 
 # TODO: add automatic structure update
