@@ -24,8 +24,6 @@ stage branch *flags:
   git merge {{branch}}
 
 publish:
-  git add .
-  git commit -m "Merged {{version}}"
   git push
   git tag -a {{version}}
   git push origin {{version}}
