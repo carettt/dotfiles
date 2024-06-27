@@ -50,6 +50,15 @@ require('nvim-treesitter.configs').setup({
   },
 })
 
+require('oil').setup({
+  columns = {
+    "size",
+    "permissions",
+    "mtime",
+    "icon",
+  }
+})
+
 -- imports
 require("caret.lsp")
 require("caret.set")
