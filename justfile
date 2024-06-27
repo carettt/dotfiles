@@ -27,4 +27,5 @@ publish:
   git add .
   git commit -m "Merged {{version}}"
   git push
-  # other miscellaneous publish actions
+  git tag -a {{version}}
+  git push origin {{version}}
