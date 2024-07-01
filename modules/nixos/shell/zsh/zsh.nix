@@ -40,6 +40,31 @@ let cfg = config.zsh; in {
       home.file.".zshrc".source = ./config.zsh;
       home.file.".zsh_plugins.txt".text =
         builtins.foldl' (x: y: x + y + "\n") "" plugins;
+
+      home.file.".zsh_functions".text = ''
+        mkenv() {
+          case $1 in
+            "rust")
+              if [ "''${2}" ]; then
+                mkdir -p "''${2}"
+              fi
+
+              cp ${../../../../flakes/rust.nix} ''${2-.}/flake.nix
+              cp ${../../../../flakes/envrc} ''${2-.}/.envrc
+              chmod +w ''${2-.}/flake.nix
+              ;;
+            *)
+              if [ "''${1}" ]; then
+                mkdir -p "''${1}"
+              fi
+
+              cp ${../../../../flakes/default.nix} ''${1-.}/flake.nix
+              cp ${../../../../flakes/envrc} ''${1-.}/.envrc
+              chmod +w ''${1-.}/flake.nix
+              ;;
+          esac
+        }
+      '';
     };
   });
 }

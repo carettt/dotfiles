@@ -44,3 +44,6 @@ setopt hist_find_no_dups
 # aliases
 alias t='tree --filesfirst'
 alias ls='ls --color' # replace with eza
+
+# functions
+source ~/.zsh_functions
