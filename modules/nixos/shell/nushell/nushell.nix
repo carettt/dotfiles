@@ -1,8 +1,8 @@
 { pkgs, lib, config, ... }:
 
-let cfg = config.shell; in {
+let cfg = config.nushell; in {
   options = {
-    shell.enable = lib.mkEnableOption "nushell";
+    nushell.enable = lib.mkEnableOption "nushell";
   };
 
   config = lib.mkIf cfg.enable {
@@ -56,7 +56,7 @@ let cfg = config.shell; in {
 
           def mkenv [dir = "."] {
             mkdir $dir
-            $dir | path join flake.nix | cp ${../home-manager/dev-env/template.nix} $in
+            $dir | path join flake.nix | cp ${../../../home-manager/dev-env/template.nix} $in
             echo "use flake" | save ($dir | path join .envrc)
           }
         '';
@@ -70,11 +70,6 @@ let cfg = config.shell; in {
       carapace = {
         enable = true;
         enableNushellIntegration = true;
-      };
-
-      starship = {
-        enable = true;
-        # TODO
       };
     };
   };

@@ -73,9 +73,6 @@
   #
   #  /etc/profiles/per-user/caret/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    EDITOR = "vim";
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -89,11 +86,7 @@
 
   browser.enable = true;
 
-  terminal = {
-    enable = true;
-    vim = true;
-  }; 
-
+  terminal.enable = true;
   direnv.enable = true;
 
   music.enable = true;

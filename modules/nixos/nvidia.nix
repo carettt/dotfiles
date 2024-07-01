@@ -24,10 +24,13 @@ let cfg = config.nvidia; in {
       };
     };
 
-    hardware.opengl = lib.mkIf cfg.opengl {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+    hardware.opengl.enable = cfg.opengl;
+
+    console = {
+      earlySetup = true;
+      font = "${pkgs.terminus_font}/share/consolefonts/ter-i16n.psf.gz";
+      packages = [ pkgs.terminus_font ];
+      keyMap = "us";
     };
 
     console = {

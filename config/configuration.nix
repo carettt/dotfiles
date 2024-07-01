@@ -61,7 +61,6 @@
     isNormalUser = true;
     description = "caret";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
   };
 
   # Home Manager
@@ -83,8 +82,8 @@
   ];
 
   environment.sessionVariables = {
-    EDITOR = "vim";
     FLAKE = "/home/caret/dotfiles";
+    EDITOR = "nvim"; # Change if not using neovim
     DIRENV_LOG_FORMAT = "";
   };
 
@@ -122,7 +121,13 @@
   bluetooth.enable = true;
 
   login.enable = true;
-  shell.enable = true;
+
+  # Pick shell
+  # All modules are disabled by default, they are listed for ease of use
+  # Only one enabled at a time is supported
+  # To use more than one, tweaking of .nix files will be needed
+  zsh.enable = true;
+  nushell.enable = false;
 
   rosepine = {
     enable = true;

@@ -61,10 +61,6 @@ in {
           preserve_split = true;
         };
 
-        master = {
-          new_is_master = true;
-        };
-
         # Aesthetic
         misc.force_default_wallpaper = 0;
 
@@ -127,7 +123,6 @@ in {
           "$mod, G, togglesplit,"
           "$mod, V, togglefloating"
           "$mod, F, fullscreen"
-          "$mod, D, exec, $menu"
           "$mod, R, exec, hyprctl reload"
           "$mod, W, exec, copyq toggle"
 
