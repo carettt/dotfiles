@@ -36,18 +36,17 @@ let cfg = config.desktop; in {
       };
 
       fuzzel.enable = lib.mkEnableOption "Fuzzel application launcher";
-
       powermenu.enable = lib.mkEnableOption "nwg-bar power menu";
-
       utilities.enable = lib.mkEnableOption "miscellaneous utilities";
-
       discord.enable = lib.mkEnableOption "Dissent Discord client";
+      office.enable = lib.mkEnableOption "LibreOffice software";
     };
   };
 
   config = lib.mkIf cfg.enable {
     home.packages = lib.lists.optionals cfg.swaybg.enable [ pkgs.swaybg ] ++
                     lib.lists.optionals cfg.discord.enable [ pkgs.dissent ] ++
+                    lib.lists.optionals cfg.office.enable [ pkgs.libreoffice ] ++
                     lib.lists.optionals cfg.utilities.enable [
                       pkgs.lxqt.lxqt-policykit
                       pkgs.copyq pkgs.wl-clipboard

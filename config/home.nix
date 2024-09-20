@@ -84,10 +84,19 @@
     email = "dandradepac@outlook.com";
   };
 
+  desktop = {
+    discord.enable = true;
+    office.enable = true;
+  };
+
+  pentesting.enable = true;
+
   browser.enable = true;
 
   terminal.enable = true;
   direnv.enable = true;
 
   music.enable = true;
+
+  obsidian.enable = true;
 }

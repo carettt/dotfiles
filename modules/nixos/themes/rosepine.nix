@@ -23,9 +23,6 @@ in {
 
         fuzzel.enable = true;
         powermenu.enable = true;
-
-        discord.enable = true;
-
         utilities.enable = true;
 
         notifications = {
