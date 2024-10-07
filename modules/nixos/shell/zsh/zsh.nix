@@ -52,6 +52,9 @@ let cfg = config.zsh; in {
               cp ${../../../../flakes/rust.nix} ''${2-.}/flake.nix
               cp ${../../../../flakes/envrc} ''${2-.}/.envrc
               chmod +w ''${2-.}/flake.nix
+              cd "''${2}"
+              direnv allow
+              cargo init
               ;;
             *)
               if [ "''${1}" ]; then
