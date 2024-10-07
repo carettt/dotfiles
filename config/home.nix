@@ -89,8 +89,6 @@
     office.enable = true;
   };
 
-  pentesting.enable = true;
-
   browser.enable = true;
 
   terminal.enable = true;

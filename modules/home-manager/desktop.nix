@@ -62,7 +62,7 @@ let cfg = config.desktop; in {
       override = {
         exec-once =  
           lib.lists.optionals cfg.waybar.enable [ "waybar" ] ++
-          lib.lists.optionals cfg.swaybg.enable [ "swaybg -i ${cfg.swaybg.wallpaper}" ] ++
+          lib.lists.optionals cfg.swaybg.enable [ "swaybg -o * -i ${cfg.swaybg.wallpaper}" ] ++
           lib.lists.optionals cfg.notifications.enable [ "swaync" ] ++
           lib.lists.optionals cfg.utilities.enable [ "lxqt-policykit-agent" "copyq --start-server" ];
       };

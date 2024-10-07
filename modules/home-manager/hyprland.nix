@@ -22,7 +22,8 @@ in {
       settings = utils.recursiveMerge [{
         # Monitors
         monitor= [
-          ",preferred,auto,auto"
+          "HDMI-A-1,1920x1080,0x0,1"
+          "eDPI,2880x1620,1920x0,auto"
           "Unknown-1,disable" # Disable ghost monitor (fuck NVIDIA)
         ];
 
@@ -174,6 +175,13 @@ in {
         # Rules
         windowrulev2 = [
           "suppressevent maximize, class:.*"
+        ];
+
+        workspace = [
+          "1,default:HDMI-A-1,monitor:HDMI-A-1"
+          "2,default:eDP-1,monitor:eDP-1"
+          "3,monitor:eDP-1"
+          "4,monitor:eDP-1"
         ];
       } cfg.override];
     };
