@@ -13,5 +13,6 @@ let cfg = config.networkingTools; in {
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = lib.lists.optionals cfg.nmap [ pkgs.nmap ];
+    networking.networkmanager.enable = true;
   };
 }
