@@ -23,7 +23,8 @@ in {
         # Monitors
         monitor= [
           "HDMI-A-1,1920x1080,0x0,1"
-          "eDPI,2880x1620,1920x0,auto"
+          "eDPI,2880x1620,1920x0,1.6"
+          ",preferred,auto,1.6"
           "Unknown-1,disable" # Disable ghost monitor (fuck NVIDIA)
         ];
 

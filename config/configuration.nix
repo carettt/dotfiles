@@ -119,6 +119,8 @@
   nvidia.enable = true;
   networkingTools.enable = true;
 
+  vmware.enable = true;
+
   bluetooth.enable = true;
 
   login.enable = true;
