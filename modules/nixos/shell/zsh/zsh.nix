@@ -68,6 +68,11 @@ let cfg = config.zsh; in {
               ;;
           esac
         }
+
+        conjure() {
+          cp ${./script.rs} ''${1-./script.rs}
+          chmod 774 ''${1-./script.rs}
+        }
       '';
     };
   });
