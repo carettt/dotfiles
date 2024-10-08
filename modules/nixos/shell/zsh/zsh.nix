@@ -55,6 +55,7 @@ let cfg = config.zsh; in {
               cd "''${2}"
               direnv allow
               cargo init
+              echo "/.direnv\n" >> .gitignore
               ;;
             *)
               if [ "''${1}" ]; then
