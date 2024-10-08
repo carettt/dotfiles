@@ -183,6 +183,7 @@ in {
           "2,default:eDP-1,monitor:eDP-1"
           "3,monitor:eDP-1"
           "4,monitor:eDP-1"
+          "special:magic,monitor:HDMI-A-1"
         ];
       } cfg.override];
     };
