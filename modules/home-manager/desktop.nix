@@ -69,6 +69,8 @@ let cfg = config.desktop; in {
     };
 
     fuzzel.enable = cfg.fuzzel.enable;
+    programs.fuzzel.settings.main.list-executables-in-path = true;
+
     powermenu.enable = cfg.powermenu.enable;
 
     services.swaync = {
