@@ -34,6 +34,7 @@ end
 local servers = {
   'rust_analyzer',
   'bashls',
+  'ts_ls',
 }
 
 for i = 1, #servers do
