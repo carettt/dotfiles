@@ -71,7 +71,7 @@ let cfg = config.zsh; in {
 
         conjure() {
           cp ${./script.rs} ''${1-./script.rs}
-          chmod 774 ''${1-./script.rs}
+          chmod 664 ''${1-./script.rs}
         }
       '';
     };
