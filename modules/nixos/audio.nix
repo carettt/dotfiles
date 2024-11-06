@@ -6,7 +6,6 @@ let cfg = config.audio; in {
   };
 
   config = lib.mkIf cfg.enable {
-    sound.enable = true;
     security.rtkit.enable = true;
     services.pipewire = {
       enable = true;
