@@ -45,7 +45,7 @@ let cfg = config.desktop; in {
 
   config = lib.mkIf cfg.enable {
     home.packages = lib.lists.optionals cfg.swaybg.enable [ pkgs.swaybg ] ++
-                    lib.lists.optionals cfg.discord.enable [ pkgs.dissent ] ++
+                    lib.lists.optionals cfg.discord.enable [ pkgs.discord ] ++
                     lib.lists.optionals cfg.office.enable [ pkgs.libreoffice ] ++
                     lib.lists.optionals cfg.utilities.enable [
                       pkgs.lxqt.lxqt-policykit
