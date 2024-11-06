@@ -16,6 +16,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.supportedFilesystems = [ "ntfs" ];
+
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     substituters = [ "https://hyprland.cachix.org" ];
@@ -136,4 +138,13 @@
     enable = true;
     wallpaper = ../wallpapers/rosepine-wp.png;
   };
+
+  # Save current system packages in /etc/current-system-packages
+  # Credit: https://www.reddit.com/r/NixOS/comments/fsummx/comment/kt9fb74/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+  environment.etc."current-system-packages".text = let
+    packages = builtins.map (p: "${p.name}") config.environment.systemPackages;
+    sortedUnique = builtins.sort builtins.lessThan (pkgs.lib.lists.unique packages);
+    formatted = builtins.concatStringsSep "\n" sortedUnique;
+  in
+    formatted;
 }
