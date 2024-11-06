@@ -22,8 +22,8 @@ in {
       settings = utils.recursiveMerge [{
         # Monitors
         monitor= [
-          "HDMI-A-1,1920x1080,0x0,1"
-          "eDPI,2880x1620,1920x0,1.6"
+          "eDP-1,2560x1440@165,0x0,1.6"
+          "HDMI-A-1,1920x1080@60,1600x0,1" # Take scaling into account (resolution / scaling = offset)
           ",preferred,auto,1.6"
           "Unknown-1,disable" # Disable ghost monitor (fuck NVIDIA)
         ];
