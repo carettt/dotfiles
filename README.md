@@ -26,11 +26,16 @@ nh os test [--update]
 dotfiles
 ├── flake.lock
 ├── flake.nix
+├── justfile
 ├── README.md
 ├── config
 │   ├── configuration.nix
 │   ├── hardware-configuration.nix
 │   └── home.nix
+├── flakes
+│   ├── default.nix
+│   ├── envrc
+│   └── rust.nix
 ├── modules
 │   ├── utils.nix
 │   ├── home-manager
@@ -41,6 +46,8 @@ dotfiles
 │   │   ├── git.nix
 │   │   ├── hyprland.nix
 │   │   ├── music.nix
+│   │   ├── obsidian.nix
+│   │   ├── pentesting.nix
 │   │   ├── powermenu.nix
 │   │   ├── template.nix
 │   │   ├── terminal.nix
@@ -61,9 +68,12 @@ dotfiles
 │   │   │           └── plugins
 │   │   │               ├── harpoon.lua
 │   │   │               ├── lsp.lua
+│   │   │               ├── nvim-surround.lua
+│   │   │               ├── oil.lua
 │   │   │               ├── rose-pine.lua
 │   │   │               ├── telescope.lua
-│   │   │               └── treesitter.lua
+│   │   │               ├── treesitter.lua
+│   │   │               └── vim-be-good.lua
 │   │   └── prompt
 │   │       ├── conf.yaml
 │   │       └── prompt.nix
@@ -76,17 +86,19 @@ dotfiles
 │       ├── networkingTools.nix
 │       ├── nvidia.nix
 │       ├── template.nix
+│       ├── vmware.nix
 │       ├── shell
 │       │   ├── nushell
 │       │   │   ├── config.nu
 │       │   │   └── nushell.nix
 │       │   └── zsh
 │       │       ├── config.zsh
+│       │       ├── script.rs
 │       │       └── zsh.nix
 │       └── themes
 │           └── rosepine.nix
 └── wallpapers
     └── rosepine-wp.png
 
-17 directories, 47 files
+18 directories, 58 files
 ```
