@@ -509,16 +509,17 @@
         "tinted-tmux": "tinted-tmux"
       },
       "locked": {
-        "lastModified": 1729963473,
-        "narHash": "sha256-uGjTjvvlGQfQ0yypVP+at0NizI2nrb6kz4wGAqzRGbY=",
-        "owner": "danth",
+        "lastModified": 1731167363,
+        "narHash": "sha256-iR9eXaZWNqSu+vUFfBqk8EIAoudKwTwieaX/CSO1qOs=",
+        "owner": "carettt",
         "repo": "stylix",
-        "rev": "04afcfc0684d9bbb24bb1dc77afda7c1843ec93b",
+        "rev": "4ab4a7dda6c45d2deaa0f5f77d6d89013a51381e",
         "type": "github"
       },
       "original": {
-        "owner": "danth",
+        "owner": "carettt",
         "repo": "stylix",
+        "rev": "4ab4a7dda6c45d2deaa0f5f77d6d89013a51381e",
         "type": "github"
       }
     },
@@ -555,16 +556,17 @@
     "tinted-foot": {
       "flake": false,
       "locked": {
-        "lastModified": 1696725948,
-        "narHash": "sha256-65bz2bUL/yzZ1c8/GQASnoiGwaF8DczlxJtzik1c0AU=",
+        "lastModified": 1726913040,
+        "narHash": "sha256-+eDZPkw7efMNUf3/Pv0EmsidqdwNJ1TaOum6k7lngDQ=",
         "owner": "tinted-theming",
         "repo": "tinted-foot",
-        "rev": "eedbcfa30de0a4baa03e99f5e3ceb5535c2755ce",
+        "rev": "fd1b924b6c45c3e4465e8a849e67ea82933fcbe4",
         "type": "github"
       },
       "original": {
         "owner": "tinted-theming",
         "repo": "tinted-foot",
+        "rev": "fd1b924b6c45c3e4465e8a849e67ea82933fcbe4",
         "type": "github"
       }
     },

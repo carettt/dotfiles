@@ -12,7 +12,7 @@
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
     stylix = {
-      url = "github:danth/stylix";
+      url = "github:carettt/stylix/4ab4a7dda6c45d2deaa0f5f77d6d89013a51381e";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
