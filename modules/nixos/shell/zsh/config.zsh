@@ -42,8 +42,9 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # aliases
-alias t='tree --filesfirst'
-alias ls='ls --color' # replace with eza
+alias t='eza -T --group-directories-first'
+alias ls='eza'
+alias l='eza -al --group-directories-first'
 
 # functions
 source ~/.zsh_functions

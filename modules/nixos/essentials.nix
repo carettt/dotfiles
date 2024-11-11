@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [ 
-    tree
+    eza
     nh
     wget
     ripgrep
