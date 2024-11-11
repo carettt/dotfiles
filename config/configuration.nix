@@ -118,7 +118,11 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
   # Enabling modules
-  nvidia.enable = true;
+  graphics = {
+    enable = true;
+    nvidia.enable = true;
+  };
+
   networkingTools.enable = true;
 
   vmware.enable = true;
