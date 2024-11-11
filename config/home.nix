@@ -91,7 +91,8 @@
 
   pentesting = {
     enable = true;
-    zap.enable = true;
+
+    webapp.enable = true;
   };
 
   browser.enable = true;
