@@ -92,6 +92,7 @@
   pentesting = {
     enable = true;
 
+    metasploit.enable = true;
     webapp.enable = true;
   };
 
