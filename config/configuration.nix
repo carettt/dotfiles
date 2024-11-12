@@ -62,7 +62,7 @@
   users.users.caret = {
     isNormalUser = true;
     description = "caret";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "wireshark" "networkmanager" "wheel" ];
   };
 
   # Home Manager
@@ -123,7 +123,12 @@
     nvidia.enable = true;
   };
 
-  networkingTools.enable = true;
+  net = {
+    enable = true;
+
+    nmap.enable = true;
+    wireshark.enable = true;
+  };
 
   vmware.enable = true;
 

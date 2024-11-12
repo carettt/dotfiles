@@ -8,5 +8,10 @@ let cfg = config.vmware; in {
   config = lib.mkIf cfg.enable {
     virtualisation.vmware.host.enable = true;
     virtualisation.vmware.host.package = pkgs.vmware-workstation;
+
+    networking.firewall.trustedInterfaces = [
+      "vmnet1"
+      "vmnet8"
+    ];
   };
 }
