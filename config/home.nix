@@ -94,6 +94,7 @@
 
     metasploit.enable = true;
     webapp.enable = true;
+    bruteforce.enable = true;
   };
 
   browser.enable = true;
