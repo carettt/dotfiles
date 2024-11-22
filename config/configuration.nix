@@ -128,6 +128,7 @@
 
     nmap.enable = true;
     wireshark.enable = true;
+    openvpn.enable = true;
   };
 
   vmware.enable = true;

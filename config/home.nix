@@ -94,7 +94,8 @@
 
     metasploit.enable = true;
     webapp.enable = true;
-    bruteforce.enable = true;
+    bruteForce.enable = true;
+    reverseEngineering.enable = true;
   };
 
   browser.enable = true;
