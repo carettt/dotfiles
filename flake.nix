@@ -21,7 +21,7 @@
     nixosConfigurations.patch = inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./config/configuration.nix
+        ./hosts/patch/configuration.nix
         inputs.home-manager.nixosModules.home-manager
         inputs.stylix.nixosModules.stylix
         { nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; }

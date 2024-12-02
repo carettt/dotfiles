@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../modules/nixos
+      ../../modules/nixos
       inputs.home-manager.nixosModules.default
     ];
 
@@ -146,7 +146,7 @@
 
   rosepine = {
     enable = true;
-    wallpaper = ../wallpapers/rosepine-wp.png;
+    wallpaper = ../../wallpapers/rosepine-wp.png;
   };
 
   # Save current system packages in /etc/current-system-packages
