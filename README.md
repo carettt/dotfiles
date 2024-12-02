@@ -24,80 +24,81 @@ nh os test [--update]
 ## Structure
 ```
 dotfiles
-├── flakes
-│   ├── default.nix
-│   ├── envrc
-│   └── rust.nix
-├── hosts
-│   └── patch
-│       ├── configuration.nix
-│       ├── hardware-configuration.nix
-│       └── home.nix
-├── modules
-│   ├── home-manager
-│   │   ├── dev-env
-│   │   │   ├── direnv.nix
-│   │   │   └── template.nix
-│   │   ├── neovim
-│   │   │   ├── config
-│   │   │   │   ├── lua
-│   │   │   │   │   ├── caret
-│   │   │   │   │   │   ├── init.lua
-│   │   │   │   │   │   ├── lsp.lua
-│   │   │   │   │   │   ├── remap.lua
-│   │   │   │   │   │   └── set.lua
-│   │   │   │   │   └── plugins
-│   │   │   │   │       ├── harpoon.lua
-│   │   │   │   │       ├── lsp.lua
-│   │   │   │   │       ├── nvim-surround.lua
-│   │   │   │   │       ├── oil.lua
-│   │   │   │   │       ├── rose-pine.lua
-│   │   │   │   │       ├── telescope.lua
-│   │   │   │   │       ├── treesitter.lua
-│   │   │   │   │       └── vim-be-good.lua
-│   │   │   │   └── init.lua
-│   │   │   └── default.nix
-│   │   ├── prompt
-│   │   │   ├── conf.yaml
-│   │   │   └── prompt.nix
-│   │   ├── browser.nix
-│   │   ├── default.nix
-│   │   ├── desktop.nix
-│   │   ├── fuzzel.nix
-│   │   ├── git.nix
-│   │   ├── hyprland.nix
-│   │   ├── music.nix
-│   │   ├── obsidian.nix
-│   │   ├── pentesting.nix
-│   │   ├── powermenu.nix
-│   │   ├── template.nix
-│   │   ├── terminal.nix
-│   │   └── waybar.nix
-│   ├── nixos
-│   │   ├── shell
-│   │   │   ├── nushell
-│   │   │   │   ├── config.nu
-│   │   │   │   └── nushell.nix
-│   │   │   └── zsh
-│   │   │       ├── config.zsh
-│   │   │       ├── script.rs
-│   │   │       └── zsh.nix
-│   │   ├── themes
-│   │   │   └── rosepine.nix
-│   │   ├── audio.nix
-│   │   ├── bluetooth.nix
-│   │   ├── default.nix
-│   │   ├── essentials.nix
-│   │   ├── graphics.nix
-│   │   ├── login.nix
-│   │   ├── net.nix
-│   │   ├── template.nix
-│   │   └── vmware.nix
-│   └── utils.nix
-├── wallpapers
-│   └── rosepine-wp.png
 ├── flake.lock
 ├── flake.nix
 ├── justfile
-└── README.md
+├── README.md
+├── config
+│   ├── configuration.nix
+│   ├── hardware-configuration.nix
+│   └── home.nix
+├── flakes
+│   ├── default.nix
+│   ├── envrc
+│   └── rust.nix
+├── modules
+│   ├── utils.nix
+│   ├── home-manager
+│   │   ├── browser.nix
+│   │   ├── default.nix
+│   │   ├── desktop.nix
+│   │   ├── fuzzel.nix
+│   │   ├── git.nix
+│   │   ├── hyprland.nix
+│   │   ├── music.nix
+│   │   ├── obsidian.nix
+│   │   ├── pentesting.nix
+│   │   ├── powermenu.nix
+│   │   ├── template.nix
+│   │   ├── terminal.nix
+│   │   ├── waybar.nix
+│   │   ├── dev-env
+│   │   │   ├── direnv.nix
+│   │   │   └── template.nix
+│   │   ├── neovim
+│   │   │   ├── default.nix
+│   │   │   └── config
+│   │   │       ├── init.lua
+│   │   │       └── lua
+│   │   │           ├── caret
+│   │   │           │   ├── init.lua
+│   │   │           │   ├── lsp.lua
+│   │   │           │   ├── remap.lua
+│   │   │           │   └── set.lua
+│   │   │           └── plugins
+│   │   │               ├── harpoon.lua
+│   │   │               ├── lsp.lua
+│   │   │               ├── nvim-surround.lua
+│   │   │               ├── oil.lua
+│   │   │               ├── rose-pine.lua
+│   │   │               ├── telescope.lua
+│   │   │               ├── treesitter.lua
+│   │   │               └── vim-be-good.lua
+│   │   └── prompt
+│   │       ├── conf.yaml
+│   │       └── prompt.nix
+│   └── nixos
+│       ├── audio.nix
+│       ├── bluetooth.nix
+│       ├── default.nix
+│       ├── essentials.nix
+│       ├── login.nix
+│       ├── networkingTools.nix
+│       ├── nvidia.nix
+│       ├── template.nix
+│       ├── vmware.nix
+│       ├── shell
+│       │   ├── nushell
+│       │   │   ├── config.nu
+│       │   │   └── nushell.nix
+│       │   └── zsh
+│       │       ├── config.zsh
+│       │       ├── script.rs
+│       │       └── zsh.nix
+│       └── themes
+│           └── rosepine.nix
+└── wallpapers
+    └── rosepine-wp.png
+
+18 directories, 58 files
 ```
