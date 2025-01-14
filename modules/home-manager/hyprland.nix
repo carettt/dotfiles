@@ -178,6 +178,7 @@ in {
         # Rules
         windowrulev2 = [
           "suppressevent maximize, class:.*"
+          "float, class:(caret).(.*)"
         ];
 
         workspace = [

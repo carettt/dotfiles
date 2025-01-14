@@ -1,3 +1,5 @@
+vim.g.rust_recommended_style = false
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
