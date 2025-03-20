@@ -28,6 +28,9 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # load completions
 autoload -U compinit && compinit
 
+# enable zoxide as cd command
+eval "$(zoxide init zsh --cmd cd)"
+
 # history
 HISTSIZE=5000
 HISTFILE=~/.zsh_history

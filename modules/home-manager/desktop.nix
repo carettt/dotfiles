@@ -51,6 +51,7 @@ let cfg = config.desktop; in {
                       pkgs.lxqt.lxqt-policykit
                       pkgs.copyq pkgs.wl-clipboard
                       pkgs.grim pkgs.slurp
+                      pkgs.nomacs
                     ];
 
     waybar.enable = cfg.waybar.enable;

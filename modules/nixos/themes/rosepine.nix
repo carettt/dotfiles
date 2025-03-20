@@ -144,6 +144,18 @@ in {
               color: #${config.stylix.base16Scheme.base05};
               padding: 0 4px;
             }
+
+            #battery {
+              padding: 0 15px 0 0;
+            }
+
+            #battery.warning {
+              color: #${config.stylix.base16Scheme.base09};
+            }
+
+            #battery.critical {
+              color: #${config.stylix.base16Scheme.base09};
+            }
           '';
         };
       };

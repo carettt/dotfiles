@@ -24,7 +24,7 @@ in {
 
           modules-left = [ "hyprland/workspaces" "hyprland/window" ];
           modules-center = [ "clock" ];
-          modules-right = lib.lists.optionals config.music.enable [ "mpris" ] ++ [ "bluetooth" "custom/notifications" ];
+          modules-right = lib.lists.optionals config.music.enable [ "mpris" ] ++ [ "battery" "bluetooth" "custom/notifications" ];
 
           "hyprland/workspaces" = {
             format = "{icon}";
@@ -61,6 +61,17 @@ in {
             status-icons = {
               paused = "󰏤";
             };
+          };
+
+          battery = {
+            states = {
+              "warning" = 30;
+              "critical" = 15;
+            };
+
+            format = "{capacity}% {icon}";
+            format-icons = ["" "" "" "" ""];
+            max-length = 25;
           };
 
           "custom/notifications" = {

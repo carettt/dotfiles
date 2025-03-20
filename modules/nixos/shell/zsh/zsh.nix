@@ -20,7 +20,7 @@ let cfg = config.zsh; in {
       "jeffreytse/zsh-vi-mode"
     ];
   in {
-    environment.systemPackages = [ pkgs.zsh pkgs.antidote ];
+    environment.systemPackages = [ pkgs.zsh pkgs.antidote pkgs.zoxide];
     environment.shells = [ pkgs.zsh ];
     environment.pathsToLink = [ "/share/zsh" "/share/antidote" ];
 
