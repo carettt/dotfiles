@@ -131,7 +131,12 @@
     openvpn.enable = true;
   };
 
-  vmware.enable = true;
+  virt = {
+    enable = true;
+
+    vmware.enable = true;
+    docker.enable = true;
+  };
 
   bluetooth.enable = true;
 

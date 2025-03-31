@@ -47,7 +47,7 @@ setopt hist_find_no_dups
 # aliases
 alias t='eza -T --group-directories-first'
 alias ls='eza'
-alias l='eza -al --group-directories-first'
+alias l='eza -lah --group-directories-first'
 
 # functions
 source ~/.zsh_functions
