@@ -134,7 +134,7 @@
   virt = {
     enable = true;
 
-    vmware.enable = true;
+    vmware.enable = false;
     docker.enable = true;
   };
 
