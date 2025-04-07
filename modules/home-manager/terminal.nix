@@ -25,10 +25,6 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [
-      (pkgs.nerdfonts.override { fonts = ["Hack" ]; })
-    ];
-
     programs.alacritty = {
       enable = true;
 

@@ -227,12 +227,12 @@ in {
 
       fonts = {
         emoji = {
-          package = pkgs.nerdfonts.override { fonts = ["Hack"]; };
+          package = pkgs.nerd-fonts.hack;
           name = "Hack Nerd Font";
         };
 
         monospace = {
-          package = pkgs.nerdfonts.override { fonts = ["Hack"]; };
+          package = pkgs.nerd-fonts.hack;
           name = "Hack Nerd Font";
         };
 
