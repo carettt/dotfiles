@@ -163,12 +163,12 @@ in {
       wayland.windowManager.hyprland.settings = {
         general."col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base0D})";
 
-        windowrulev2 = [
+        windowrule = [
           "opacity 0.75 0.65,class:^(Alacritty)$"
-          "workspace 1,class:^(Alacritty)$"
-          "workspace 2,class:^(firefox)$"
-          "workspace 3,class:^(so.libdb.dissent)$"
-          "workspace 4,title:^(overskride)$"
+          "workspace:1,class:^(Alacritty)$"
+          "workspace:2,class:^(firefox)$"
+          "workspace:3,class:^(so.libdb.dissent)$"
+          "workspace:4,title:^(overskride)$"
           "float,title:^(Authentication Required)$"
           "float,title:^(overskride)$"
           "float,class:^(com.github.hluk.copyq)$"

@@ -176,14 +176,14 @@ in {
         ];
 
         # Rules
-        windowrulev2 = [
+        windowrule = [
           "suppressevent maximize, class:.*"
           "float, class:(caret).(.*)"
         ];
 
         workspace = [
-          "1,default:HDMI-A-1,monitor:HDMI-A-1"
-          "2,default:eDP-1,monitor:eDP-1"
+          "1,monitor:HDMI-A-1,default:true"
+          "2,monitor:eDP-1,default:true"
           "3,monitor:eDP-1"
           "4,monitor:eDP-1"
           "special:magic,monitor:HDMI-A-1"
