@@ -85,7 +85,7 @@
   ];
 
   environment.sessionVariables = {
-    FLAKE = "/home/caret/dotfiles";
+    NH_FLAKE = "/home/caret/dotfiles";
     EDITOR = "nvim"; # Change if not using neovim
     DIRENV_LOG_FORMAT = "";
     NIXOS_OZONE_WL = 1;

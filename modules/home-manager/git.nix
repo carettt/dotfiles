@@ -19,10 +19,16 @@ let cfg = config.git; in {
 
     programs.git = {
       enable = true;
-      userName = cfg.name;
-      userEmail = cfg.email;
 
-      extraConfig.init.defaultBranch = "main";
+      settings = {
+        user = {
+          name = cfg.name;
+          email = cfg.email;
+        };
+
+        init.defaultBranch = "main";
+      };
+
     };
   };
 }
