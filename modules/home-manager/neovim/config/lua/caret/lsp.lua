@@ -35,6 +35,8 @@ local servers = {
   'rust_analyzer',
   'bashls',
   'ts_ls',
+  'basedpyright',
+  'clangd',
 }
 
 for i = 1, #servers do

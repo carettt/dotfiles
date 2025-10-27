@@ -16,6 +16,7 @@ in {
       pkgs.lua-language-server
       pkgs.rust-analyzer
       pkgs.bash-language-server
+      pkgs.basedpyright
     ];
 
     programs.neovim = {

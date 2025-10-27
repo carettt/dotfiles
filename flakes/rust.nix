@@ -3,23 +3,31 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in {
-        devShells.default = pkgs.mkShell {
-        nativeBuildInputs = [
-          pkgs.cargo
-          pkgs.rustc
-        ];
+  outputs = { self, nixpkgs, fenix, ... }: let
+    system = "x86_64-linux";
 
-        shellHook = ''
-          ${pkgs.cowsay}/bin/cowsay "entered dev env!" | ${pkgs.lolcat}/bin/lolcat -F 0.5
-        '';
-        };
-      });
+    pkgs = nixpkgs.legacyPackages.${system};
+    toolchain = fenix.packages.${system}.stable.defaultToolchain;
+  in {
+    devShells.${system}.default = pkgs.mkShell rec {
+      nativeBuildInputs = [
+        toolchain
+
+        pkgs.rust-analyzer
+      ];
+
+      shellHook = ''
+        ${pkgs.cowsay}/bin/cowsay "entered dev env!" | ${pkgs.lolcat}/bin/lolcat -F 0.5
+      '';
+
+      LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath nativeBuildInputs;
+    };
+  };
 }
+

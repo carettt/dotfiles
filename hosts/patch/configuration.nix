@@ -17,6 +17,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.supportedFilesystems = [ "ntfs" ];
+  boot.binfmt.emulatedSystems = [ "armv6l-linux" ];
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];

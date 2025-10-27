@@ -52,6 +52,7 @@ let cfg = config.desktop; in {
                       pkgs.copyq pkgs.wl-clipboard
                       pkgs.grim pkgs.slurp
                       pkgs.nomacs
+                      pkgs.caligula
                     ];
 
     waybar.enable = cfg.waybar.enable;
